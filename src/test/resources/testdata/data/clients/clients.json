@@ -1,0 +1,38 @@
+[
+  {
+    "agency": "agency1",
+    "createdDateTime": "2000-01-01 00:00:00",
+    "dob": "1960-01-31",
+    "firstName": "User1",
+    "guid": "17DD0E94-6A57-49C8-E933-CC480D1AC3FB",
+    "lastName": "LastName1",
+    "status": "ACTIVE"
+  },
+  {
+    "agency": "agency1",
+    "createdDateTime": "2000-01-01 00:00:00",
+    "dob": "1960-01-31",
+    "firstName": "User2",
+    "guid": "A661E400-8CD0-6336-D0C2-2E8012903819",
+    "lastName": "LastName2",
+    "status": "ACTIVE"
+  },
+  {
+    "agency": "agency2",
+    "createdDateTime": "2000-01-01 00:00:00",
+    "dob": "1960-01-31",
+    "firstName": "User3",
+    "guid": "4FED669C-7FAF-0EA3-28EC-44F7173B18E6",
+    "lastName": "LastName3",
+    "status": "ACTIVE"
+  },
+  {
+    "agency": "agency3",
+    "createdDateTime": "2000-01-01 00:00:00",
+    "dob": "1960-01-31",
+    "firstName": "User4",
+    "guid": "176FF906-BA91-1DAC-BF82-C466BEEC23A9",
+    "lastName": "LastName4",
+    "status": "ACTIVE"
+  }
+]
