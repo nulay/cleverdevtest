@@ -12,7 +12,7 @@ This application is based on Spring Boot.
 
 Requirements:
 
-- JDK 17
+- JDK 15
 - Maven
 - Application starts with command
 
