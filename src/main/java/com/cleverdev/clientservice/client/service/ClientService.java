@@ -13,7 +13,8 @@ public class ClientService {
     private final ClientRepository clientRepository;
 
     public List<ClientDto> getClients() {
-        return clientRepository.getClients();
+        List<ClientDto> clientDtos = clientRepository.getClients();
+        return clientDtos;
     }
 
     public List<String> getAgencies() {

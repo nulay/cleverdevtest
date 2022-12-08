@@ -28,17 +28,27 @@ public class ClientNoteRepository {
         return getNotesByPeriodAndClientGuid(clientNotes, clientGuid, from, to);
     }
 
+    public List<ClientNoteDto> getNotesByClientGuidAndAgencyInDateRange(List<ClientNoteDto> clientNotes, final String clientGuid,
+                                                                        final String agency,
+                                                                        final LocalDate from, final LocalDate to) {
+        if (!notesByAgency.containsKey(agency)) {
+            throw new IllegalArgumentException(String.format(AGENCY_NOT_FOUND_MESSAGE_TEMPLATE, agency));
+        }
+        return getNotesByPeriodAndClientGuid(clientNotes, clientGuid, from, to);
+    }
+
     public void initAgencyClientNotes(final String agency, final List<ClientNoteDto> clientNotes) {
         notesByAgency.put(agency, List.copyOf(clientNotes));
     }
 
     private List<ClientNoteDto> getNotesByPeriodAndClientGuid(final List<ClientNoteDto> notes, final String clientGuid,
                                                               final LocalDate from, final LocalDate to) {
-        return notes.stream()
+        List<ClientNoteDto> filteredNotes = notes.stream()
                 .filter(note -> Objects.equals(clientGuid, note.getClientGuid())
                         && DateCompareUtils.isDateInPeriod(note.getCreatedDateTime().toLocalDate(),
                         from, to))
                 .collect(Collectors.toList());
+        return filteredNotes;
     }
 
 }

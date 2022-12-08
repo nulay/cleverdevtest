@@ -49,10 +49,13 @@ public class ClientNoteService {
     }
 
     public List<ClientNoteDto> getNotes(final ClientNoteRequestDto requestDto) {
-        return clientNoteRepository.getNotesByClientGuidAndAgencyInDateRange(
+        List<ClientNoteDto> listNotes = clientNoteRepository.getNotesByClientGuidAndAgencyInDateRange(
+                readAgencyClientNotes(requestDto.getAgency()),
                 requestDto.getClientGuid(), requestDto.getAgency(),
                 requestDto.getDateFrom(), requestDto.getDateTo()
         );
+
+        return listNotes;
     }
 
 }
